@@ -2,7 +2,6 @@ package drivers;
 
 import com.codeborne.selenide.WebDriverProvider;
 import lombok.SneakyThrows;
-import org.aeonbits.owner.Config;
 import org.aeonbits.owner.ConfigFactory;
 import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.MutableCapabilities;
@@ -39,12 +38,5 @@ public class BrowserstackMobileDriver implements WebDriverProvider {
         // Initialise the remote Webdriver using BrowserStack remote URL
         // and desired capabilities defined above
         return new RemoteWebDriver(new URL("http://hub.browserstack.com/wd/hub"), mutableCapabilities);
-    }
-    public URL getBrowserstackUrl() {
-        try {
-            return new URL("http://hub.browserstack.com/wd/hub");
-        } catch (MalformedURLException e) {
-            throw new RuntimeException(e);
-        }
     }
 }
