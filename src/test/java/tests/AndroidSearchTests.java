@@ -23,20 +23,4 @@ public class AndroidSearchTests extends TestBase {
                 $$(AppiumBy.id("org.wikipedia.alpha:id/page_list_item_title"))
                         .shouldHave(sizeGreaterThan(0)));
     }
-    @Disabled
-    @Test
-    void searchDisneylandTest() {
-        step("Type search", () -> {
-            $(AppiumBy.accessibilityId("Search Wikipedia")).click();
-            $(AppiumBy.id("org.wikipedia.alpha:id/search_src_text")).sendKeys("Disneyland");
-        });
-
-        step("Verify content found", () ->
-                $$(AppiumBy.id("org.wikipedia.alpha:id/page_list_item_title"))
-                        .shouldHave(sizeGreaterThan(0)));
-
-        /*$$(AppiumBy.id("org.wikipedia.alpha:id/page_list_item_title")).find(Condition.text("Disneyland")).click();
-        $$(AppiumBy.id("org.wikipedia.alpha:id/pcs-edit-section-title-description"))
-                .find(Condition.text("Disneyland"));*/
-    }
 }
