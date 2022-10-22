@@ -17,9 +17,9 @@ public class AndroidSearchTests extends TestBase {
 
     @Test
     void searchTest() {
-        step("Поиск статьи про Disneyland Paris", () -> {
+        step("Поиск статьи про Disneyland", () -> {
             $(AppiumBy.accessibilityId("Search Wikipedia")).click();
-            $(AppiumBy.id("org.wikipedia.alpha:id/search_src_text")).sendKeys("Disneyland Paris");
+            $(AppiumBy.id("org.wikipedia.alpha:id/search_src_text")).sendKeys("Disneyland");
         });
         step("Проверка, что хотя бы одна статья есть", () ->
                 $$(AppiumBy.id("org.wikipedia.alpha:id/page_list_item_title"))
@@ -27,7 +27,7 @@ public class AndroidSearchTests extends TestBase {
         step("Переход к первой статье", () ->
         $$(AppiumBy.id("org.wikipedia.alpha:id/page_list_item_title")).first().click());
         step("Проверка, что тест есть на странице", () ->
-        $(AppiumBy.accessibilityId("Theme park resort in France owned by The Walt Disney Company")));
+        $(AppiumBy.accessibilityId("Amusement park in Anaheim, California")));
 
     }
 }
