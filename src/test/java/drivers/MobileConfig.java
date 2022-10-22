@@ -32,6 +32,11 @@ public interface MobileConfig extends Config {
     @Key("name")
     public abstract String getName();
 
+    @Key("remoteUrl")
+    String getRemoteUrl();
+
+    @Key("baseUrl")
+    String getBaseUrl();
 
 }
 
